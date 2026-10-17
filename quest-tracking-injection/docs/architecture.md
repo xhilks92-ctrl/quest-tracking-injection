@@ -143,8 +143,8 @@ Fields 2 and 3 are translation fields, not velocity fields.
 
 Modes are `0 = NORMAL` and `1 = DATAINJECT`. The headset writer checks this mode;
 the investigated controller writer does not provide equivalent exclusion of the
-physical controller producers. The final controller tool keeps the original
-headset mode and uses the two source-specific call-site patches instead.
+physical controller producers. The 0.1.1 controller tool requires NORMAL
+headset mode and makes no global mode transactions during a session and uses the two source-specific call-site patches instead.
 
 ## Observed firmware device-ID lifetime bug
 
@@ -168,3 +168,11 @@ The successful tests and visual confirmation are documented in
 [validation.md](validation.md). Public evidence excludes paired controller IDs,
 ADB serials, personal filesystem paths, and live process addresses.
 
+
+## Head tracking watchdog (0.1.1)
+
+The guard reads the head shared-memory second counter at `+0x14` and the
+mode double buffer at `+0x15b0`. A head counter stall longer than 500 ms,
+an observed non-NORMAL mode, or a read failure ends the guard and restores
+the physical calls. This does not observe compositor frames or prove a cause
+for the previously reported headset-view freezes.

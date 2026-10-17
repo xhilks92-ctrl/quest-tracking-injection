@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stable, reversible Quest 1 controller pose injection; firmware 49845030443200410 only."""
+"""Experimental, reversible Quest 1 controller pose injection; firmware 49845030443200410 only."""
 import argparse
 import math
 import pathlib
@@ -9,6 +9,7 @@ import shutil
 import struct
 import subprocess
 import sys
+import time
 FIRMWARE = '49845030443200410'
 REMOTE = '/data/local/tmp/codex-quest-inject'
 GUARD = '/data/local/tmp/codex-source-guard'
@@ -71,7 +72,7 @@ def main():
         recovery = GUARD + '-recover'
         run(['push', str(guard_binary), recovery])
         shell(['chmod', '755', recovery])
-        print(shell([recovery, str(pid), hex(bias), '0']), end='', flush=True)
+        print(shell([recovery, str(pid), hex(bias), '0', '0']), end='', flush=True)
         reply = shell(['service', 'call', 'TrackingDataInjection', '5', 'i32', '0'])
         if not re.search('Parcel\\(00000000\\s+00000001', reply):
             raise RuntimeError('NORMAL mode not accepted: ' + reply)
@@ -112,8 +113,13 @@ def main():
         if counters[0] == counters[1]:
             original = counters[2 + (counters[1] & 1)]
             break
-    if original not in (0, 1):
-        raise RuntimeError('Could not determine original tracking mode')
+    if original != 0:
+        raise RuntimeError('Controller injection requires NORMAL head tracking mode; use --restore first')
+    head_base = address - 5552
+    before = mem(pid, head_base + 0x14, 4)
+    time.sleep(0.1)
+    if mem(pid, head_base + 0x14, 4) == before:
+        raise RuntimeError('Head tracking is not advancing; wake the headset before injection')
     run(['push', str(binary), REMOTE])
     run(['push', str(guard_binary), GUARD])
     shell(['chmod', '755', REMOTE, GUARD])
@@ -129,7 +135,7 @@ def main():
     injector = None
     injector_pid = None
     try:
-        guard_args = [GUARD, str(pid), hex(bias), str(a.seconds + 4)]
+        guard_args = [GUARD, str(pid), hex(bias), str(a.seconds + 4), hex(head_base)]
         guard = subprocess.Popen(adb + ['shell', shlex.join(guard_args)], stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         ready = guard.stdout.readline()
         match = re.search('SOURCE_GUARD ACTIVE .*guard_pid=(\\d+)', ready)
@@ -143,7 +149,18 @@ def main():
         if not imatch:
             raise RuntimeError('Injector did not become ready')
         injector_pid = imatch[1]
-        output, _ = injector.communicate(timeout=a.seconds + 15)
+        deadline = time.monotonic() + a.seconds + 15
+        while True:
+            if guard.poll() is not None:
+                raise RuntimeError('Head tracking guard ended; stopping injection')
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise RuntimeError('Injector exceeded its deadline')
+            try:
+                output, _ = injector.communicate(timeout=min(0.1, remaining))
+                break
+            except subprocess.TimeoutExpired:
+                pass
         print(output, end='', flush=True)
         if injector.returncode:
             raise RuntimeError(f'Injector exited with code {injector.returncode}')
@@ -167,14 +184,11 @@ def main():
         for site in sites:
             if mem(pid, site, 4) != bytes.fromhex('00013fd6'):
                 raise RuntimeError('Original physical pose instruction could not be verified')
-        reply = shell(['service', 'call', 'TrackingDataInjection', '5', 'i32', str(original)])
-        if not re.search('Parcel\\(00000000\\s+00000001', reply):
-            raise RuntimeError('Mode restoration was not accepted: ' + reply)
         if shell(['pidof', 'trackingservice']).strip() == str(pid):
             c = struct.unpack('<4I', mem(pid, address, 16))
             if c[0] != c[1] or c[2 + (c[1] & 1)] != original:
                 raise RuntimeError('Mode restoration could not be confirmed in memory')
-        print('Original tracking mode restored.', flush=True)
+        print('NORMAL head tracking mode verified; no mode write was made.', flush=True)
     print('Original physical pose calls restored and verified. Session completed.', flush=True)
 if __name__ == '__main__':
     try:

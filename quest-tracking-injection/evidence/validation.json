@@ -902,5 +902,25 @@
     "Specific Quest 1 firmware only",
     "Other VR apps and continuous unattended operation not validated",
     "Underlying firmware device-ID lifetime bug mitigated by bounded retries, not fixed"
-  ]
+  ],
+  "reliability_status": "Experimental; user reported earlier headset-view freezes. Original intermittent freeze cause remains unproven.",
+  "follow_up_0_1_1": {
+    "global_mode_writes_during_sessions": false,
+    "head_stall_timeout_seconds": 0.5,
+    "accepted_frames_per_run": [
+      90,
+      480,
+      300
+    ],
+    "duration_seconds_per_run": [
+      3,
+      8,
+      5
+    ],
+    "user_confirmed_motion_and_fluid_view_in_8_second_run": true,
+    "original_instructions_and_normal_mode_verified_after_each_run": true,
+    "synthetic_watchdog_stall_test_passed": true,
+    "synthetic_watchdog_restoration_seconds": 0.501,
+    "limitation": "Head counters do not measure compositor frames. Long-term reliability is unproven."
+  }
 }

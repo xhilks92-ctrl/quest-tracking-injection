@@ -36,7 +36,7 @@ def main():
     for path in files:
         if path.is_symlink() or path.suffix in (".so", ".apk", ".log"):
             parser.error(f"Unexpected file in public package: {path.relative_to(ROOT)}")
-    variant = "v0.1.0-arm64" if args.binary else "source"
+    variant = "v0.1.1-arm64" if args.binary else "source"
     destination = args.output or ROOT / "dist" / f"{PROJECT}-{variant}.zip"
     destination.parent.mkdir(parents=True, exist_ok=True)
     hashes = []

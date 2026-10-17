@@ -1,5 +1,38 @@
 # Validation
 
+## Follow-up correction and 0.1.1 test — October 17, 2026
+
+The user clarified that earlier apparent controller freezes sometimes included
+the entire headset view. The earlier fixed-pose visual confirmation is therefore
+ambiguous and does not establish reliable operation. Historical memory snapshots
+remain evidence of pose delivery only.
+
+Version 0.1.1 removes global head-mode transactions from normal controller
+sessions. It refuses a non-NORMAL mode or an unchanging head counter before
+starting. The device-side guard samples the head update counter and mode every
+10 ms and restores physical calls after more than 500 ms without an update or
+an observed non-NORMAL mode. This is a mitigation, not a proven root-cause fix.
+
+Follow-up hardware tests:
+
+- Three seconds at 30 Hz: 90 accepted pose updates; one rejected field retried.
+- Eight seconds of synthetic motion at 60 Hz: 480 accepted updates, 720 input
+  poses consumed, no invalid input lines; one rejected field retried.
+- A further five-second run completed 300 updates at 60 Hz, consuming 450 input poses; four rejected fields were retried.
+- All three runs completed with the original physical call instructions verified and
+  NORMAL head mode verified. The head counter watchdog did not fire.
+- After the actual moving-pose run, the user explicitly confirmed that the right
+  virtual controller moved and the headset view remained fluid while turning.
+- An isolated device-side test using synthetic memory, not trackingservice,
+  froze a simulated head counter. The guard detected it and restored both
+  original instruction words after 0.501 seconds; the test passed.
+
+No claim is made that the original intermittent freeze has been reproduced or
+eliminated. Further repeated tests and compositor observations are needed.
+
+## Historical evidence (0.1.0)
+
+
 ## Hardware and scope
 
 Validation was performed on one rooted Meta Quest 1 running Android 10/API 29,

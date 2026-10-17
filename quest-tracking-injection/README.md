@@ -1,5 +1,15 @@
 # Quest Tracking Injection
 
+**Experimental status (0.1.1):** Earlier testing included user-reported freezes
+of the headset view. Version 0.1.1 removes global head-tracking mode writes from
+controller sessions, requires advancing head tracking in NORMAL mode before
+starting, and restores physical controller calls if the head update counter
+stops advancing for more than 500 ms. An eight-second moving-pose test was
+subsequently confirmed by the user with fluid head tracking. The original freeze
+has not been conclusively attributed to a specific cause; long-term reliability
+is not established. A counter watchdog does not monitor compositor rendering.
+
+
 An experimental, root-based controller pose injector for **Meta Quest 1**.
 
 The prototype accepts custom positions and orientations, temporarily suppresses
@@ -112,7 +122,7 @@ Coordinate conversion and calibration belong in the external tracker.
 
 ## Stop and restore
 
-The launcher restores the original mode and physical pose calls after completion
+The launcher restores physical pose calls and verifies NORMAL head mode after completion
 or Ctrl+C, and verifies the original instruction bytes. A separate device-side
 guard has its own timeout of session duration plus four seconds, at most 59 seconds.
 
@@ -138,7 +148,7 @@ entry point, so source-specific suppression is needed. During a session, the gua
 replaces the physical Constellation pose call at `0xaab4c` and the fallback pose
 call at `0xa9830` with NOPs in the running process, then restores both instructions.
 
-The final controller injector keeps the original headset mode. `DATAINJECT` is not
+The controller injector requires NORMAL headset mode and never writes the global mode during a session. `DATAINJECT` is not
 required for these controller writes. Analysis hardware breakpoints are not used
 by the finished launcher.
 
