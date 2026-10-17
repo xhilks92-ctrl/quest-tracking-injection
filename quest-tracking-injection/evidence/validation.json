@@ -1,0 +1,906 @@
+{
+  "schema_version": 1,
+  "validation_date": "2026-10-17",
+  "device": {
+    "model": "Meta Quest 1",
+    "android_api": 29,
+    "firmware": "49845030443200410",
+    "rooted_adb": true
+  },
+  "provenance": "Curated export of previously recorded private tests; no new hardware validation during publication cleanup.",
+  "redaction": {
+    "omitted": [
+      "controller identifiers",
+      "ADB serials",
+      "personal filesystem paths",
+      "live process addresses",
+      "process identifiers",
+      "raw log strings",
+      "physical baseline pose vectors"
+    ],
+    "retained": [
+      "ELF-relative offsets",
+      "requested synthetic poses",
+      "relative sample times",
+      "test outcomes"
+    ]
+  },
+  "stable_pose": {
+    "duration_seconds": 10,
+    "requested_hz": 90,
+    "requested_position": [
+      0.125,
+      -0.25,
+      -0.5
+    ],
+    "requested_orientation": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "injector": {
+      "accepted_frames": 900,
+      "accepted_pose_calls_at_least": 1800,
+      "rejected_calls": 3,
+      "restore_mode": 0,
+      "restore_ok": 1,
+      "interrupted": 0
+    },
+    "exit_code": 0,
+    "sample_count": 22,
+    "all_samples_match": true,
+    "samples": [
+      {
+        "elapsed_seconds": 0.3040672079999922,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 0.7392182500000217,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 1.1938145830000622,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 1.6347937080000747,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 2.0724501250000458,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 2.497822000000042,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 2.933447290999993,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 3.3727955830000838,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 3.8180420410000124,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 4.251251416000059,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 4.686131541000009,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 5.123902125000086,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 5.561580916000025,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 5.994337875000042,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 6.4248258750000105,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 6.859816166000087,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 7.291128415999992,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 7.727981208000074,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 8.146499124999991,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 8.58858404099999,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 9.035572290999994,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "elapsed_seconds": 9.464966583000091,
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      }
+    ],
+    "visual_confirmation": {
+      "type": "direct headset-user report",
+      "original_language": "German",
+      "english_translation": "Yes, the virtual pose stays fixed.",
+      "context": "Asked whether the virtual right controller remained still while the physical controller was moved."
+    },
+    "original_calls_restored": true,
+    "physical_updates_resumed": true
+  },
+  "external_stream": {
+    "duration_seconds": 4,
+    "requested_hz": 90,
+    "injector": {
+      "accepted_frames": 360,
+      "accepted_pose_calls_at_least": 720,
+      "rejected_calls": 6,
+      "streamed_poses": 3,
+      "invalid_lines": 0,
+      "restore_mode": 0,
+      "restore_ok": 1,
+      "interrupted": 0
+    },
+    "exit_code": 0,
+    "samples": [
+      {
+        "requested_position": [
+          0.125,
+          -0.25,
+          -0.5
+        ],
+        "requested_orientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "requested_position": [
+          0.25,
+          -0.25,
+          -0.5
+        ],
+        "requested_orientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "tracking_server": {
+          "position": [
+            0.25,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.25,
+            -0.25,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "valid": 1
+        }
+      },
+      {
+        "requested_position": [
+          0.125,
+          -0.1,
+          -0.5
+        ],
+        "requested_orientation": [
+          0,
+          0,
+          0.38268343,
+          0.92387953
+        ],
+        "tracking_server": {
+          "position": [
+            0.125,
+            -0.100000001,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0.382683426,
+            0.923879504
+          ],
+          "valid": 1
+        },
+        "vr_shell_client": {
+          "position": [
+            0.125,
+            -0.100000001,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0,
+            0.382683426,
+            0.923879504
+          ],
+          "valid": 1
+        }
+      }
+    ],
+    "restoration_verified": true
+  },
+  "interruption": {
+    "signal": "SIGINT sent to host launcher",
+    "host_exit_code": 130,
+    "head_mode_during": 0,
+    "head_counter_advanced": true,
+    "original_instruction_bytes_after": {
+      "0xaab4c": "00013fd6",
+      "0xa9830": "00013fd6"
+    },
+    "mode_after": 0
+  },
+  "original_firmware_trackingservice_sha256": "b529a82d479ee503ef71ee2c27bf5c6a719c9792338987eac360b298926509d0",
+  "limitations": [
+    "Physical pose calls for both controllers are paused during each bounded session",
+    "Only selected controller is fed by this injector",
+    "Specific Quest 1 firmware only",
+    "Other VR apps and continuous unattended operation not validated",
+    "Underlying firmware device-ID lifetime bug mitigated by bounded retries, not fixed"
+  ]
+}
